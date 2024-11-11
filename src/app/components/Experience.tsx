@@ -7,7 +7,7 @@ import CanvasLoader from './CanvasLoader'
 import Developer from './Developer'
 
 const Experience = () => {
-    const [animation , setAnimation] = React.useState('Offensive_idle') 
+    const [animation , setAnimation] = React.useState('idle') 
   return (
     <section className='c-space my-20'>
         <div className='w-full text-white-600'>
@@ -29,7 +29,7 @@ const Experience = () => {
                     <div className='sm-py-10 py-5 sm:px-5 px-2.5'>
                         {workExperiences.map((work, index) => {
                             return (
-                                <div key={work.id} className='work-content_container group' onClick={() => setAnimation(work.animation.toLowerCase())} onPointerOver={() => setAnimation(work.animation.toLowerCase())} onPointerOut={() => setAnimation('Offensive_idle')}>
+                                <div key={work.id} className='work-content_container group' onClick={() => setAnimation(work.animation.toLowerCase())} onPointerOver={() => setAnimation(work.animation.toLowerCase())} onPointerOut={() => setAnimation('idle')}>
                                     <div className='flex flex-col h-full justify-start items-center py-2'>
                                         <div className='work-content_logo'> 
                                             <img src={work.icon} alt="icon" className='w-full h-full'/>
@@ -41,7 +41,6 @@ const Experience = () => {
                                         <p className='text-sm mb-5'>{work.pos} -- {work.duration}</p>
                                         <p className='group-hover:text-white transition ease-in-out duration-500'>{work.title}</p>
                                     </div>
-
                                 </div>
                             )
                         })}

@@ -35,19 +35,19 @@ type GLTFResult = GLTF & {
   };
 };
 
-function Developer({ animationName = "Offensive_idle", ...props }: any) {
+function Developer({ animationName = "idle", ...props } : any) {
   const group = useRef<THREE.Group>();
   
   const { nodes, materials } = useGLTF(
     "/models/animations/nez.glb"
   ) as GLTFResult;
 
-  const { animations: idleAnimation } = useFBX("/models/animations/Offensive_idle.fbx");
+  const { animations: idleAnimation } = useFBX("/models/animations/idle.fbx");
   const { animations: saluteAnimation } = useFBX("/models/animations/salute.fbx");
   const { animations: clappingAnimation } = useFBX("/models/animations/clapping.fbx");
   const { animations: victoryAnimation } = useFBX("/models/animations/victory.fbx");
 
-  idleAnimation[0].name = "Offensive_idle";
+  idleAnimation[0].name = "idle";
   saluteAnimation[0].name = "salute";
   clappingAnimation[0].name = "clapping";
   victoryAnimation[0].name = "victory";

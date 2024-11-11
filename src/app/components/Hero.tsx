@@ -2,7 +2,7 @@
 import React, { Suspense } from "react";
 import { SparklesText } from "./ui/SparklesText";
 import { Canvas } from "@react-three/fiber";
-import { CameraShake, PerspectiveCamera } from "@react-three/drei";
+import { CameraShake, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import HackerRoom from "./HackerRoom";
 import CanvasLoader from "./CanvasLoader";
 // import { Leva, useControls } from "leva";
@@ -10,12 +10,13 @@ import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "@/constants";
 import TargetModel from "./TargetModel";
 import ReactLogo from "./ReactLogo";
-import Cube from "./Cube";
+// import Cube from "./Cube";
 import { HoloSmol } from "./HoloSmol";
 import { Robot } from "./Robot";
 import HeroCamera from "./HeroCamera";
 import { Button } from "@/app/components/ui/button";
 import { CoolMode } from "@/app/components/ui/CoolMode";
+import { Hololive } from "./hololive";
 
 export default function Hero() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -161,7 +162,7 @@ export default function Hero() {
                       : [11, 3, 0]
                   }
                 />
-                <Cube
+                {/* <Cube
                   position={
                     isSmall
                       ? [4, -5, 0]
@@ -171,8 +172,20 @@ export default function Hero() {
                       ? [5, -5, 0]
                       : [11, -7.5, 0]
                   }
+                /> */}
+                <Hololive
+                  position={
+                    isSmall
+                      ? [4, -5, 0]
+                      : isMobile
+                      ? [5, -5, 0]
+                      : isTablet
+                      ? [5, -5, 0]
+                      : [11, -13, 2]
+                  }
+                  rotation={[0, -1.1, 0]}
+                  scale={5}
                 />
-
                 <Robot
                   position={
                     isSmall
@@ -194,12 +207,13 @@ export default function Hero() {
             </Suspense>
           </Canvas>
         </div>
-            <div className="relative flex justify-center mt-4">
-            <CoolMode>
-              <Button>“The greatest victory is that which requires no battle.”
-              ― Sun Tzu</Button>
-            </CoolMode>
-            </div>
+        <div className="relative flex justify-center mt-4">
+          <CoolMode>
+            <Button>
+              “The greatest victory is that which requires no battle.” ― Sun Tzu
+            </Button>
+          </CoolMode>
+        </div>
       </div>
     </section>
   );

@@ -240,7 +240,7 @@ export const calculateSizes = (isSmall: boolean, isMobile: boolean, isTablet: bo
       name: 'Kalbe',
       pos: 'Backend Developer',
       duration: '2023 - 2024',
-      title: "Kalbe is a leading pharmaceutical company in Indonesia. I worked as a backend developer, building RESTful APIs and microservices using Node.js, Express, and MongoDB. I also collaborated with the frontend team to integrate APIs.",
+      title: "Kalbe is a leading pharmaceutical company in Indonesia. I worked as a backend developer, building RESTful APIs and microservices using ASP.NET CORE 6 , I also collaborated with the frontend team to integrate APIs.",
       icon: '/assets/logo-kalbe.png',
       animation: 'clapping',
     },
@@ -250,7 +250,7 @@ export const calculateSizes = (isSmall: boolean, isMobile: boolean, isTablet: bo
       pos: 'Graduated Student',
       duration: '2021 - 2024',
       title: "I graduated from Binus University with a Bachelor's degree in Computer Science. I gained a strong understanding of software engineering principles, algorithms, data structures, and object-oriented programming.",
-      icon: '/assets/binus.png',
+      icon: '/assets/binus-logo-removebg.png',
       animation: 'salute',
     },
   ];
