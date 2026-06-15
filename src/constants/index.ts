@@ -62,7 +62,7 @@ export const navLinks = [
       desc: 'FitMate is an AI-powered shopping app that lets you virtually try on clothes using your body photo. It provides personalized fashion recommendations, style guides, and access to affiliate shops. Save time and money by seeing how clothes look on you before buying.',
       subdesc:
         'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, Fitmate is designed for optimal performance and scalability.',
-      href: 'https://fitmate-six.vercel.app/',
+      href: 'https://youtu.be/dKkFPLDgta8',
       texture: '/textures/project/project-fitmate.mov',
       logo: '/assets/project-logo-fitmate.png',
       logoStyle: {
@@ -179,7 +179,7 @@ export const navLinks = [
       title: 'Instagram Clone',
       desc: 'Instagram Clone is a social media platform that lets you share photos and videos with friends and followers. Stay connected with the latest trends and explore new content from around the world.',
       subdesc:
-        'Built with ReactNative , GraphQl , Tailwind CSS, and MongoDb, Instagram Clone offers a seamless user experience. Share photos, videos, and stories with friends, and explore trending content. Stay connected and engaged with the Instagram Clone app.',
+        'Built with React Native, GraphQL, Tailwind CSS, and MongoDB, this was my first time working with NoSQL and a non-REST backend. I built this to deeply understand how GraphQL and MongoDB work together.because this is my first time working with NoSQL and non-REST API backend',
       href: 'https://youtu.be/y7rIfGHC2qo',
       texture: '/textures/project/project-instagram.mov',
       logo: '/assets/instagram-removebg.png',
@@ -228,6 +228,15 @@ export const calculateSizes = (isSmall: boolean, isMobile: boolean, isTablet: bo
   export const workExperiences = [
     {
       id: 1,
+      name: 'ADX Asia',
+      pos: 'Full Stack Developer',
+      duration: 'January 2025 - Present',
+      title: "Building a full-stack OOH advertising platform (Vue.js + Django) managing thousands of billboard placements. Led service architecture overhaul, async export automation (Redis), parallel photo sync, interactive map with 10+ filters, and a natural language RAG search feature.",
+      icon: '/assets/logo-adxasia.png',
+      animation: 'clapping',
+    },
+    {
+      id: 2,
       name: 'Hacktiv8 FullStack Javascript Bootcamp',
       pos: 'Graduated Student',
       duration: '2024 - 2024',
@@ -236,7 +245,7 @@ export const calculateSizes = (isSmall: boolean, isMobile: boolean, isTablet: bo
       animation: 'victory',
     },
     {
-      id: 2,
+      id: 3,
       name: 'Kalbe',
       pos: 'Backend Developer',
       duration: '2023 - 2024',
@@ -245,7 +254,7 @@ export const calculateSizes = (isSmall: boolean, isMobile: boolean, isTablet: bo
       animation: 'clapping',
     },
     {
-      id: 3,
+      id: 4,
       name: 'Binus University',
       pos: 'Graduated Student',
       duration: '2021 - 2024',
