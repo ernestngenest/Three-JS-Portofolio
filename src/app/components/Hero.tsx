@@ -17,6 +17,20 @@ import HeroCamera from "./HeroCamera";
 import { Button } from "@/app/components/ui/button";
 import { CoolMode } from "@/app/components/ui/CoolMode";
 import { Hololive } from "./hololive";
+import { Component, ReactNode } from "react";
+
+class ThreeErrorBoundary extends Component<{ children: ReactNode }, { error: boolean }> {
+  constructor(props: { children: ReactNode }) {
+    super(props);
+    this.state = { error: false };
+  }
+  static getDerivedStateFromError() {
+    return { error: true };
+  }
+  render() {
+    return this.state.error ? null : this.props.children;
+  }
+}
 
 export default function Hero() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -141,16 +155,18 @@ export default function Hero() {
                 />
               </HeroCamera>
               <group>
-                <TargetModel
-                  position={
-                    isMobile
-                      ? [-9, -10, -10]
-                      : isTablet
-                      ? [-11, -7, -10]
-                      : [-17, -12, -10]
-                  }
-                  scale={2}
-                />
+                <ThreeErrorBoundary>
+                  <TargetModel
+                    position={
+                      isMobile
+                        ? [-5, -7, 0]
+                        : isTablet
+                        ? [-8, -7, 0]
+                        : [-11, -9, 0]
+                    }
+                    scale={isSmall ? 0.002 : isMobile ? 0.0025 : 0.004}
+                  />
+                </ThreeErrorBoundary>
                 <ReactLogo
                   position={
                     isSmall
@@ -207,10 +223,16 @@ export default function Hero() {
             </Suspense>
           </Canvas>
         </div>
-        <div className="relative flex justify-center mt-4">
+        <div className="flex flex-col items-center justify-center mt-4 gap-2">
+          <span className="text-xs text-white/40 animate-bounce tracking-widest uppercase flex flex-col items-center gap-1">
+            click me
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
           <CoolMode>
-            <Button>
-              “The greatest victory is that which requires no battle.” ― Sun Tzu
+            <Button className="px-6 py-3 text-sm font-medium text-white/80 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 hover:text-white transition-all duration-200 cursor-pointer">
+              {"\"The greatest victory is that which requires no battle.\" — Sun Tzu"}
             </Button>
           </CoolMode>
         </div>
